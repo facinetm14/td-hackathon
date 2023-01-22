@@ -1,7 +1,7 @@
 <?php
-if (isset($_GET['email']) && !empty($_GET['email'])) {
-    $email = $_GET['email'];
-    $name = $_GET["firstName"];
+if (isset($_POST'email']) && !empty($_POST['email'])) {
+    $email = $_POST['email'];
+    $name = $_POST["firstName"];
     if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $to      = $mail;
         $subject = 'SIM CARD CHANGED !';
@@ -9,8 +9,7 @@ if (isset($_GET['email']) && !empty($_GET['email'])) {
         $headers = 'From: facinetkouyate430@gmail.com' . "\r\n" .
             'Reply-To: noreply';
        if ( mail($to, $subject, $message, $headers))
-            echo "COOL\n";
-        else
-            echo "ERROR\n!"; 
+            return 200;
+       echo return 501; 
     }
 }
